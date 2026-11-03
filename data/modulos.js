@@ -1,0 +1,188 @@
+window.CYR_PORTAL_DATA = (() => {
+  const portal = {
+  titulo: "Codigos y Recuerdos: El ultimo commit",
+  navegacion: [
+    { nombre: "Inicio", href: "#inicio" },
+    { nombre: "Módulos", href: "#modulos" },
+  ],
+  portada: {
+    etiqueta: "ARCHIVO 2026 // RUTA DE APRENDIZAJE",
+    tituloPrincipal: "Codigos y Recuerdos:",
+    subtitulo: "El ultimo commit",
+    descripcion: "Una ruta para construir, conectar y lanzar ideas. Explora los módulos y encuentra todo lo necesario para tu siguiente commit.",
+    metadatos: "02 MÓDULOS · C# → WEB → MAUI",
+    tituloModulos: "Selecciona tu siguiente nivel",
+    descripcionModulos: "Busca, filtra y completa los quizzes para avanzar en tu ruta.",
+  },
+  };
+
+  const modulos = [
+  {
+    id: "modulo-1",
+    categoria: "Programación",
+    nombre: "Fundamentos de POO en C#",
+    docente: "Arcides Canales",
+    resumen: "Aprende a modelar soluciones con clases, objetos y los principios esenciales de la programación orientada a objetos en C#.",
+    instrumentos: ["Computadora", "Guía de ejercicios"],
+    programas: ["Visual Studio", ".NET SDK"],
+    herramientas: ["Clases y objetos", "Encapsulamiento", "Herencia", "Polimorfismo"],
+    recursos: [
+      { nombre: "Documentación de C#", url: "https://learn.microsoft.com/es-es/dotnet/csharp/" },
+      { nombre: "Clases y objetos", url: "https://learn.microsoft.com/es-es/dotnet/csharp/fundamentals/tutorials/classes" },
+      { nombre: "Programación orientada a objetos", url: "https://learn.microsoft.com/es-es/dotnet/csharp/fundamentals/tutorials/oop" },
+    ],
+    evidencia: "Aplicación de consola en C# que modele un problema usando clases, encapsulamiento y relaciones entre objetos.",
+    quiz: [
+      {
+        pregunta: "¿Qué diferencia existe entre una clase y un objeto?",
+        opciones: ["La clase es el plano y el objeto es una instancia creada a partir de ese plano.", "Son dos nombres para el mismo concepto.", "Un objeto define el plano y una clase es siempre una instancia."],
+        respuesta: 0,
+      },
+      {
+        pregunta: "¿Qué principio de POO permite ocultar los detalles internos de una clase?",
+        opciones: ["Herencia", "Encapsulamiento", "Compilación"],
+        respuesta: 1,
+      },
+      {
+        pregunta: "¿Cómo se relacionan la herencia y el polimorfismo?",
+        opciones: ["La herencia permite reutilizar y especializar tipos; el polimorfismo permite tratarlos mediante una interfaz común.", "Ambos se usan únicamente para crear variables locales.", "La herencia reemplaza la necesidad de métodos."],
+        respuesta: 0,
+      },
+    ],
+  },
+  {
+    id: "modulo-1",
+    categoria: "Datos y control de versiones",
+    nombre: "Acceso a Datos (ADO.NET), GitHub y Análisis",
+    docente: "Arcides Canales",
+    resumen: "Conecta aplicaciones .NET con bases de datos mediante ADO.NET y organiza el análisis y control de versiones de un proyecto.",
+    instrumentos: ["Computadora", "Caso de análisis"],
+    programas: ["Visual Studio", ".NET SDK", "SQL Server"],
+    herramientas: ["ADO.NET", "Git", "GitHub", "Historias de usuario"],
+    recursos: [
+      { nombre: "ADO.NET", url: "https://learn.microsoft.com/es-es/dotnet/framework/data/adonet/" },
+      { nombre: "Documentación de GitHub", url: "https://docs.github.com/es" },
+      { nombre: "Git: documentación oficial", url: "https://git-scm.com/doc" },
+    ],
+    evidencia: "Repositorio en GitHub con una aplicación .NET que consulte datos usando ADO.NET y un documento breve de análisis.",
+    quiz: [
+      {
+        pregunta: "¿Qué responsabilidad cumple una conexión en ADO.NET?",
+        opciones: ["Establecer la comunicación entre la aplicación y el origen de datos.", "Diseñar la interfaz gráfica.", "Publicar el repositorio en GitHub."],
+        respuesta: 0,
+      },
+      {
+        pregunta: "¿Para qué se utiliza un commit en Git?",
+        opciones: ["Para borrar el historial del proyecto.", "Para guardar una instantánea identificable de los cambios.", "Para instalar una base de datos."],
+        respuesta: 1,
+      },
+      {
+        pregunta: "¿Qué información debe describir una historia de usuario?",
+        opciones: ["El usuario, lo que necesita y el beneficio que busca.", "Solo el nombre del archivo ejecutable.", "La lista completa de contraseñas del proyecto."],
+        respuesta: 0,
+      },
+    ],
+  },
+  {
+    id: "modulo-1",
+    categoria: "Desarrollo web",
+    nombre: "Bases de Datos SQL, ASP.NET Web Forms y Razor Pages",
+    docente: "Arcides Canales",
+    resumen: "Diseña y consulta bases de datos relacionales, y construye páginas web dinámicas con tecnologías de ASP.NET.",
+    instrumentos: ["Computadora", "Modelo entidad-relación"],
+    programas: ["SQL Server", "Visual Studio", "ASP.NET"],
+    herramientas: ["SQL", "ASP.NET Web Forms", "Razor Pages", "CRUD"],
+    recursos: [
+      { nombre: "Introducción a SQL Server", url: "https://learn.microsoft.com/es-es/sql/sql-server/what-is-sql-server" },
+      { nombre: "Razor Pages en ASP.NET Core", url: "https://learn.microsoft.com/es-es/aspnet/core/razor-pages/" },
+      { nombre: "Tutorial de SQL", url: "https://learn.microsoft.com/es-es/sql/t-sql/tutorial-writing-transact-sql-statements" },
+    ],
+    evidencia: "Sitio web conectado a una base de datos que permita crear, consultar, actualizar y eliminar registros.",
+    quiz: [
+      {
+        pregunta: "¿Qué diferencia hay entre una clave primaria y una clave foránea?",
+        opciones: ["La primaria identifica un registro; la foránea relaciona registros con otra tabla.", "La primaria siempre contiene texto y la foránea siempre fechas.", "No existe diferencia entre ambas."],
+        respuesta: 0,
+      },
+      {
+        pregunta: "¿Qué operaciones representa el acrónimo CRUD?",
+        opciones: ["Crear, leer, actualizar y eliminar.", "Conectar, reiniciar, usar y desplegar.", "Compilar, reescribir, unificar y depurar."],
+        respuesta: 0,
+      },
+      {
+        pregunta: "¿Qué función cumplen las páginas Razor en ASP.NET Core?",
+        opciones: ["Permiten crear páginas web con marcado y lógica de servidor organizados por página.", "Sustituyen el motor de base de datos.", "Solo sirven para editar imágenes."],
+        respuesta: 0,
+      },
+    ],
+  },
+  {
+    id: "modulo-2",
+    categoria: "Aplicaciones móviles",
+    nombre: ".NET MAUI Avanzado, Persistencia SQLite y Scrum",
+    docente: "Arcides Canales",
+    resumen: "Lleva una aplicación multiplataforma más allá de lo básico, guarda datos localmente y organiza el trabajo con Scrum.",
+    instrumentos: ["Computadora", "Dispositivo o emulador"],
+    programas: [".NET MAUI", "Visual Studio", "SQLite"],
+    herramientas: ["Persistencia local", "SQLite", "MVVM", "Scrum"],
+    recursos: [
+      { nombre: "Documentación de .NET MAUI", url: "https://learn.microsoft.com/es-es/dotnet/maui/" },
+      { nombre: "SQLite en .NET MAUI", url: "https://learn.microsoft.com/es-es/dotnet/maui/data-cloud/database-sqlite" },
+      { nombre: "Guía de Scrum", url: "https://scrumguides.org/download.html" },
+    ],
+    evidencia: "Aplicación .NET MAUI multiplataforma que persista información con SQLite, acompañada por evidencias del sprint.",
+    quiz: [
+      {
+        pregunta: "¿Qué ventaja ofrece SQLite para una aplicación móvil sin conexión?",
+        opciones: ["Permite almacenar y consultar datos localmente sin depender de un servidor.", "Obliga a mantener conexión permanente a internet.", "Reemplaza la interfaz de la aplicación."],
+        respuesta: 0,
+      },
+      {
+        pregunta: "¿Qué responsabilidad tiene el ViewModel en MVVM?",
+        opciones: ["Gestionar los datos y la lógica de presentación que conecta la vista con el modelo.", "Dibujar directamente todos los píxeles de la pantalla.", "Almacenar exclusivamente imágenes del sistema."],
+        respuesta: 0,
+      },
+      {
+        pregunta: "¿Qué objetivo tiene la retrospectiva al finalizar un sprint?",
+        opciones: ["Inspeccionar cómo trabajó el equipo e identificar mejoras.", "Asignar calificaciones a los clientes.", "Eliminar los elementos terminados del producto."],
+        respuesta: 0,
+      },
+    ],
+  },
+  {
+    id: "modulo-2",
+    categoria: "Comercio electrónico",
+    nombre: "Comercio Electrónico con PrestaShop",
+    docente: "Arcides Canales",
+    resumen: "Configura una tienda en línea, organiza su catálogo y prepara una experiencia de compra con PrestaShop.",
+    instrumentos: ["Computadora", "Catálogo de productos"],
+    programas: ["PrestaShop", "Navegador web", "Servidor local"],
+    herramientas: ["Catálogo de productos", "Categorías", "Carrito de compras", "Gestión de pedidos"],
+    recursos: [
+      { nombre: "Documentación de PrestaShop", url: "https://devdocs.prestashop-project.org/" },
+      { nombre: "Centro de ayuda de PrestaShop", url: "https://help-center.prestashop.com/" },
+      { nombre: "Guía de usuario de PrestaShop", url: "https://docs.prestashop-project.org/" },
+    ],
+    evidencia: "Tienda PrestaShop funcional con catálogo organizado, productos configurados y flujo de compra demostrable.",
+    quiz: [
+      {
+        pregunta: "¿Qué información esencial debe incluir la ficha de un producto?",
+        opciones: ["Nombre, descripción, precio e imágenes relevantes.", "Solo el nombre del proveedor.", "Únicamente el código interno."],
+        respuesta: 0,
+      },
+      {
+        pregunta: "¿Para qué sirven las categorías en el catálogo de una tienda?",
+        opciones: ["Para organizar productos y ayudar a los clientes a encontrarlos.", "Para procesar los pagos bancarios por sí solas.", "Para reemplazar las descripciones de producto."],
+        respuesta: 0,
+      },
+      {
+        pregunta: "¿Qué pasos componen el flujo básico desde el carrito hasta un pedido?",
+        opciones: ["Revisar el carrito, introducir datos de entrega, elegir pago y confirmar el pedido.", "Crear una categoría y cerrar la tienda.", "Cambiar la contraseña y borrar el catálogo."],
+        respuesta: 0,
+      },
+    ],
+  },
+  ];
+
+  return { portal, modulos };
+})();
