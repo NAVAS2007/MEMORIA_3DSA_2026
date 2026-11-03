@@ -12,3 +12,7 @@ Comprender sintaxis, memorizar comandos o algoritmos de código C#, creación de
 Ayudar a mis compañeros a seguir con la creación de este proyecto final, haciendo los commits de mi parte del trabajo, avanzando en las demás partes que me corresponde desarrollar en este sitio web.
 
 <img src="https://media1.tenor.com/m/lzusyaT0TlIAAAAC/cat-computer.gif" alt="Gato" width="400" height="400">
+
+
+[Mi GitHub, si gustan verlo](https://github.com/jefferarc2607)
+***Jefferson Arce - 3DSA 2026***
