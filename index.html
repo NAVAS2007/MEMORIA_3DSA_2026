@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#080a12">
+    <meta name="description" content="Portal educativo de programación">
+    <title>Portal educativo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="data/modulos.js"></script>
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="#inicio" aria-label="Ir al inicio">
+          <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
+          <span>CYR<span class="brand-period">.</span></span>
+        </a>
+        <nav id="site-navigation" class="site-navigation" aria-label="Navegación principal"></nav>
+        <div class="header-actions">
+          <span class="header-status"><span class="status-dot"></span> EN LÍNEA</span>
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false">☼ Modo claro</button>
+        </div>
+      </header>
+
+      <main>
+        <section id="inicio" class="hero" aria-labelledby="page-title">
+          <p id="hero-eyebrow" class="eyebrow"></p>
+          <h1 id="page-title"></h1>
+          <p id="hero-subtitle" class="hero-subtitle"></p>
+          <p id="hero-description" class="hero-copy"></p>
+          <div class="hero-meta">
+            <span id="course-meta"></span>
+            <span class="meta-divider" aria-hidden="true"></span>
+            <span id="progress-status" aria-live="polite"></span>
+          </div>
+          <div class="hero-decoration" aria-hidden="true">01—03</div>
+        </section>
+
+        <section id="modulos" class="modules-section" aria-labelledby="modules-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">CONTENIDO DEL CURSO</p>
+              <h2 id="modules-title"></h2>
+              <p id="section-description" class="section-description"></p>
+            </div>
+            <p class="section-note">DOCENTE <span>//</span> ARCIDES CANALES</p>
+          </div>
+
+          <div class="module-controls" aria-label="Buscar y filtrar módulos">
+            <label class="search-control">
+              <span>BUSCAR</span>
+              <input id="module-search" type="search" placeholder="Nombre, herramienta o tema..." autocomplete="off">
+            </label>
+            <label class="filter-control">
+              <span>CATEGORÍA</span>
+              <select id="category-filter"></select>
+            </label>
+            <label class="filter-control">
+              <span>PROGRESO</span>
+              <select id="progress-filter">
+                <option value="all">Todos los módulos</option>
+                <option value="pending">Pendientes</option>
+                <option value="completed">Completados</option>
+              </select>
+            </label>
+          </div>
+          <p id="results-status" class="results-status" aria-live="polite"></p>
+          <p id="storage-notice" class="storage-notice" role="status" hidden>No fue posible guardar los cambios en este navegador. El progreso actual solo estará disponible durante esta visita.</p>
+          <div id="modules-grid" class="modules-grid" aria-live="polite"></div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <a class="brand footer-brand" href="#inicio" aria-label="Volver al inicio">
+          <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
+          <span>CYR<span class="brand-period">.</span></span>
+        </a>
+        <p>HECHO PARA APRENDER <span>·</span> UN COMMIT A LA VEZ</p>
+        <a class="back-to-top" href="#inicio">VOLVER ARRIBA ↑</a>
+      </footer>
+    </div>
+  </body>
+</html>
