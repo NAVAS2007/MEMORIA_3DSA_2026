@@ -10,7 +10,7 @@ window.CYR_PORTAL_DATA = (() => {
     tituloPrincipal: "Codigos y Recuerdos:",
     subtitulo: "El ultimo commit",
     descripcion: "Una ruta para construir, conectar y lanzar ideas. Explora los módulos y encuentra todo lo necesario para tu siguiente commit.",
-    metadatos: "06 MÓDULOS · C# → WEB → MAUI",
+    metadatos: "07 MÓDULOS · C# → WEB → MAUI",
     tituloModulos: "Selecciona tu siguiente nivel",
     descripcionModulos: "Busca, filtra y completa los quizzes para avanzar en tu ruta.",
   },
@@ -178,6 +178,38 @@ window.CYR_PORTAL_DATA = (() => {
       {
         pregunta: "¿Qué pasos componen el flujo básico desde el carrito hasta un pedido?",
         opciones: ["Revisar el carrito, introducir datos de entrega, elegir pago y confirmar el pedido.", "Crear una categoría y cerrar la tienda.", "Cambiar la contraseña y borrar el catálogo."],
+        respuesta: 0,
+      },
+    ],
+  },
+  {
+    id: "modulo-3-3",
+    categoria: "Bases de datos",
+    nombre: "Módulo 3.3 Administración de Bases de Datos",
+    docente: "Javier Mineros",
+    resumen: "Aprende a organizar, consultar y proteger bases de datos para mantener la información íntegra y disponible.",
+    instrumentos: ["Computadora", "Modelo de base de datos"],
+    programas: ["Sistema gestor de bases de datos", "Editor SQL"],
+    herramientas: ["Consultas SQL", "Claves y relaciones", "Respaldos", "Seguridad de datos"],
+    recursos: [
+      { nombre: "Documentación de SQL Server", url: "https://learn.microsoft.com/es-es/sql/sql-server/" },
+      { nombre: "Tutorial de SQL", url: "https://learn.microsoft.com/es-es/sql/t-sql/tutorial-writing-transact-sql-statements" },
+    ],
+    evidencia: "Base de datos organizada con consultas de administración y un respaldo de sus datos.",
+    quiz: [
+      {
+        pregunta: "¿Para qué sirve una clave primaria en una tabla?",
+        opciones: ["Para identificar de forma única cada registro.", "Para duplicar los datos de otra tabla.", "Para ordenar las columnas alfabéticamente."],
+        respuesta: 0,
+      },
+      {
+        pregunta: "¿Qué permite una clave foránea?",
+        opciones: ["Relacionar registros entre tablas.", "Eliminar automáticamente todas las tablas.", "Convertir una tabla en un archivo de texto."],
+        respuesta: 0,
+      },
+      {
+        pregunta: "¿Por qué es importante realizar copias de seguridad de una base de datos?",
+        opciones: ["Para poder recuperar la información ante pérdidas o fallos.", "Para evitar que se ejecuten consultas SQL.", "Para hacer que los datos sean públicos."],
         respuesta: 0,
       },
     ],
