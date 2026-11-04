@@ -9,14 +9,20 @@ const progressStatus = document.querySelector("#progress-status");
 const themeToggle = document.querySelector("#theme-toggle");
 const navigation = document.querySelector("#site-navigation");
 const completedModules = new Set(readProgress());
+const quizStates = new WeakMap();
+const QUESTIONS_PER_QUIZ = 3;
 
 // Reads saved progress safely; corrupted or unavailable browser storage is reported in the page.
 function readProgress() {
   try {
     const storedProgress = JSON.parse(localStorage.getItem("cyr-completed-modules") || "[]");
-    return Array.isArray(storedProgress)
-      ? storedProgress.filter((id) => modulos.some((modulo) => modulo.id === id))
-      : [];
+    if (!Array.isArray(storedProgress)) {
+      return [];
+    }
+
+    return [...new Set(storedProgress.filter((id) =>
+      modulos.some((modulo) => modulo.id === id)
+    ))];
   } catch {
     showStorageNotice();
     return [];
@@ -117,6 +123,7 @@ function createModuleCard(modulo, index) {
   card.className = "module-card";
   card.dataset.moduleId = modulo.id;
   card.dataset.category = modulo.categoria;
+  const roundCount = Math.ceil(modulo.quiz.length / QUESTIONS_PER_QUIZ);
   card.innerHTML = `
     <div class="module-card-top">
       <span class="module-index">MÓDULO ${String(index + 1).padStart(2, "0")}</span>
@@ -133,10 +140,8 @@ function createModuleCard(modulo, index) {
     </div>
     <p class="evidence"><strong>EVIDENCIA FINAL //</strong> ${escapeHtml(modulo.evidencia)}</p>
     <details class="quiz">
-      <summary>RESPONDER QUIZ · ${modulo.quiz.length} PREGUNTAS</summary>
-      <div class="quiz-questions">
-        ${modulo.quiz.map((question, questionIndex) => createQuizQuestion(modulo, question, questionIndex)).join("")}
-      </div>
+      <summary>RESPONDER QUIZ · ${roundCount} RONDAS DE ${QUESTIONS_PER_QUIZ} PREGUNTAS</summary>
+      <div class="quiz-questions"></div>
       <p class="quiz-result" aria-live="polite"></p>
     </details>
     <div class="module-footer">
@@ -153,13 +158,33 @@ function createModuleCard(modulo, index) {
       evaluateAnswer(card, modulo, Number(event.target.closest("fieldset").dataset.questionIndex));
     }
   });
+  const quiz = card.querySelector(".quiz");
+  quizStates.set(quiz, { round: -1, questions: [] });
+  quiz.addEventListener("toggle", () => {
+    if (!quiz.open) {
+      return;
+    }
+    const state = quizStates.get(quiz);
+    state.round = (state.round + 1) % roundCount;
+    const firstQuestion = state.round * QUESTIONS_PER_QUIZ;
+    state.questions = modulo.quiz.slice(firstQuestion, firstQuestion + QUESTIONS_PER_QUIZ);
+    quiz.querySelector("summary").textContent = `QUIZ · RONDA ${state.round + 1} DE ${roundCount}`;
+    quiz.querySelector(".quiz-questions").innerHTML = state.questions
+      .map((question, questionIndex) => createQuizQuestion(modulo, question, questionIndex))
+      .join("");
+    const result = quiz.querySelector(".quiz-result");
+    result.textContent = "";
+    result.classList.remove("is-correct", "is-incorrect");
+  });
   return card;
 }
 
 // Gives immediate feedback and records a module after all questions are answered and passed.
 function evaluateAnswer(card, modulo, questionIndex) {
-  const questionElement = card.querySelector(`[data-question-index="${questionIndex}"]`);
-  const question = modulo.quiz[questionIndex];
+  const quiz = card.querySelector(".quiz");
+  const state = quizStates.get(quiz);
+  const questionElement = quiz.querySelector(`[data-question-index="${questionIndex}"]`);
+  const question = state.questions[questionIndex];
   const selectedAnswer = Number(questionElement.querySelector('input[type="radio"]:checked').value);
   const feedback = questionElement.querySelector(".question-feedback");
   const isCorrect = selectedAnswer === question.respuesta;
@@ -170,24 +195,24 @@ function evaluateAnswer(card, modulo, questionIndex) {
   feedback.classList.toggle("is-correct", isCorrect);
   feedback.classList.toggle("is-incorrect", !isCorrect);
 
-  const answers = [...card.querySelectorAll(".quiz-question")].map((element, index) => {
+  const answers = [...quiz.querySelectorAll(".quiz-question")].map((element, index) => {
     const selected = element.querySelector('input[type="radio"]:checked');
-    return selected ? Number(selected.value) === modulo.quiz[index].respuesta : null;
+    return selected ? Number(selected.value) === state.questions[index].respuesta : null;
   });
   const answeredCount = answers.filter((answer) => answer !== null).length;
   const correctCount = answers.filter(Boolean).length;
   const result = card.querySelector(".quiz-result");
 
-  if (answeredCount < modulo.quiz.length) {
-    result.textContent = `${answeredCount} de ${modulo.quiz.length} preguntas respondidas.`;
+  if (answeredCount < state.questions.length) {
+    result.textContent = `${answeredCount} de ${state.questions.length} preguntas respondidas.`;
     result.classList.remove("is-correct", "is-incorrect");
     return;
   }
 
   const passed = correctCount >= 2;
   result.textContent = passed
-    ? `¡Aprobado! ${correctCount} de ${modulo.quiz.length} respuestas correctas. Módulo completado.`
-    : `${correctCount} de ${modulo.quiz.length} correctas. Necesitas al menos 2; revisa tus respuestas.`;
+    ? `¡Aprobado! ${correctCount} de ${state.questions.length} respuestas correctas. Módulo completado.`
+    : `${correctCount} de ${state.questions.length} correctas. Necesitas al menos 2; revisa tus respuestas.`;
   result.classList.toggle("is-correct", passed);
   result.classList.toggle("is-incorrect", !passed);
 
