@@ -246,6 +246,37 @@ window.CYR_PORTAL_DATA = (() => {
       },
     ],
   },
+   {
+    id: "modulo-3-6",
+    categoria: "Documentación de sistemas",
+    nombre: "Módulo 3.6 Conversación en inglés sobre mantenimiento de sistemas informáticos",
+    docente: "Javier Mineros",
+    resumen: "Aprendimos a desarrollar la comprensión y expresión oral en inglés para describir equipos, comunicar fallas y explicar tareas de mantenimiento informático.",
+    instrumentos: ["Computadora", "Sistema desarrollado", "Traductor"],
+    programas: ["Procesador de texto", "Herramienta para diagramas"],
+    herramientas: ["Manual de usuario", "Documentación técnica", "Transcripciones de conversación", "Evidencias del desarrollo"],
+    recursos: [
+      { nombre: "Documentación del módulo", url: "https://es.scribd.com/document/647789576/Modulo-3-6-Ingles-TERCER-ANO" },
+    ],
+    evidencia: ["Conversación en exposiciones de diagnóstico y mantenimiento", "Documentación en inglés", "Glosario bilingüe de términos informáticos"],
+    quiz: [
+      {
+        pregunta: "¿Qué pregunta ayuda a iniciar el diagnóstico de un problema?",
+        opciones: ["What seems to be the problem?", "Where is the blue yesterday?", "How many screen is it?"], 
+        respuesta: 0 
+      },
+      { 
+        pregunta: "¿Qué expresión se usa para dar una instrucción de mantenimiento?", 
+        opciones: ["Please restart the computer.", "The restart yesterday blue.", "Computer because quickly."], 
+        respuesta: 0 
+      },
+      { 
+        pregunta: "¿Cómo se puede describir un fallo de manera clara?", 
+        opciones: ["Describe the symptoms and any error messages.", "Yesterday blue is not working.", "Computer is very fast."], 
+        respuesta: 0 
+      },
+    ],
+  },
   {
     id: "modulo-3-8",
     categoria: "Desarrollo de software",
