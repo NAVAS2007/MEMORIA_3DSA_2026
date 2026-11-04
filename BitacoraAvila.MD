@@ -5,3 +5,4 @@
 * **Lo que me costó...** me costo trabajo poder hacer programas en avalonia y wpf.
 * **Mañana voy a...** coordinar con mis colaboradores para que clonen el proyecto y comiencen a integrar los módulos faltantes al código principal.
 
+**A Reforzar...** Puesta en marcha de microempresa. Prof. July
