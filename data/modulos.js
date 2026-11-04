@@ -261,7 +261,7 @@ window.CYR_PORTAL_DATA = (() => {
     evidencia: ["Conversación en exposiciones de diagnóstico y mantenimiento", "Documentación en inglés", "Glosario bilingüe de términos informáticos"],
     quiz: [
       {
-        pregunta: "¿Qué pregunta ayuda a iniciar el diagnóstico de un problema?",
+        pregunta: "¿Que pregunta ayuda a iniciar el diagnóstico de un problema?",
         opciones: ["What seems to be the problem?", "Where is the blue yesterday?", "How many screen is it?"], 
         respuesta: 0 
       },
