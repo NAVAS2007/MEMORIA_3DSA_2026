@@ -246,6 +246,38 @@ window.CYR_PORTAL_DATA = (() => {
       },
     ],
   },
+  {
+    id: "modulo-3-8",
+    categoria: "Desarrollo de software",
+    nombre: "Módulo 3.8 Proyecto innovador de Desarrollo de Software",
+    docente: "Javier Mineros",
+    resumen: "Con Arduino IDE y dos guías introductorias de Arduino, diseñamos proyectos para resolver problemas reales: un brazo robótico con servomotores y Arduino, y como proyecto extra, un basurero inteligente activado por un sensor.",
+    instrumentos: ["Arduino", "Servomotores", "Sensor", "Componentes electrónicos"],
+    programas: ["Arduino IDE"],
+    herramientas: ["Programación de Arduino", "Control de servomotores", "Lectura de sensores", "Prototipado de soluciones"],
+    recursos: [
+      { nombre: "Arduino IDE", url: "https://docs.arduino.cc/software/ide-v2/" },
+      { nombre: "Documentación oficial de Arduino", url: "https://docs.arduino.cc/" },
+    ],
+    evidencia: "Prototipo de un brazo robótico controlado con servomotores y Arduino, junto con un basurero inteligente que utiliza un sensor.",
+    quiz: [
+      {
+        pregunta: "¿Qué componentes se utilizaron para construir el brazo robótico?",
+        opciones: ["Arduino y servomotores.", "Un teclado y una pantalla.", "Un router y una base de datos."],
+        respuesta: 0,
+      },
+      {
+        pregunta: "¿Qué componente permite que el basurero inteligente detecte cuándo debe activarse?",
+        opciones: ["Un sensor.", "Un servomotor solamente.", "El Arduino IDE."],
+        respuesta: 0,
+      },
+      {
+        pregunta: "¿Cuál fue el propósito de los proyectos del módulo?",
+        opciones: ["Resolver problemas reales mediante prototipos con Arduino.", "Crear únicamente documentos de texto.", "Reemplazar la programación por componentes sin conexión."],
+        respuesta: 0,
+      },
+    ],
+  },
   ];
 
   return { portal, modulos };
