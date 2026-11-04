@@ -69,6 +69,12 @@ function renderCover() {
   document.querySelector('meta[name="description"]').content = portal.portada.descripcion;
 }
 
+function renderTeachers() {
+  const teachers = [...new Set(modulos.map((modulo) => modulo.docente))];
+  document.querySelector("#teachers-note").innerHTML =
+    `DOCENTES <span>//</span> ${teachers.map(escapeHtml).join(" · ")}`;
+}
+
 function createList(items, label, renderItem = (item) => escapeHtml(item)) {
   const entries = items.map((item) => `<li>${renderItem(item)}</li>`).join("");
   return `
@@ -262,6 +268,7 @@ function renderModules() {
 
   renderCover();
   renderNavigation();
+  renderTeachers();
   renderFilters();
   modulesGrid.replaceChildren(...modulos.map(createModuleCard));
   updateProgress();

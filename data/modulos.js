@@ -10,7 +10,7 @@ window.CYR_PORTAL_DATA = (() => {
     tituloPrincipal: "Codigos y Recuerdos:",
     subtitulo: "El ultimo commit",
     descripcion: "Una ruta para construir, conectar y lanzar ideas. Explora los módulos y encuentra todo lo necesario para tu siguiente commit.",
-    metadatos: "02 MÓDULOS · C# → WEB → MAUI",
+    metadatos: "06 MÓDULOS · C# → WEB → MAUI",
     tituloModulos: "Selecciona tu siguiente nivel",
     descripcionModulos: "Busca, filtra y completa los quizzes para avanzar en tu ruta.",
   },
@@ -178,6 +178,38 @@ window.CYR_PORTAL_DATA = (() => {
       {
         pregunta: "¿Qué pasos componen el flujo básico desde el carrito hasta un pedido?",
         opciones: ["Revisar el carrito, introducir datos de entrega, elegir pago y confirmar el pedido.", "Crear una categoría y cerrar la tienda.", "Cambiar la contraseña y borrar el catálogo."],
+        respuesta: 0,
+      },
+    ],
+  },
+  {
+    id: "modulo-3-4",
+    categoria: "Documentación de sistemas",
+    nombre: "Módulo 3.4 Elaboración de documentación de Sistemas informaticos",
+    docente: "Javier Mineros",
+    resumen: "Aprendimos a saber hacer documentacion sobre nuestros sistemas, o manuales de usuario y el recorrido de como hicimos nuestros sistemas",
+    instrumentos: ["Computadora", "Sistema desarrollado", "Capturas de pantalla"],
+    programas: ["Procesador de texto", "Herramienta para diagramas"],
+    herramientas: ["Manual de usuario", "Documentación técnica", "Diagramas de flujo", "Evidencias del desarrollo"],
+    recursos: [
+      { nombre: "Documentación de Microsoft Learn", url: "https://learn.microsoft.com/es-es/" },
+      { nombre: "Guía de Markdown", url: "https://www.markdownguide.org/basic-syntax/" },
+    ],
+    evidencia: "Documentación del sistema que incluya un manual de usuario y el recorrido de su proceso de desarrollo.",
+    quiz: [
+      {
+        pregunta: "¿Cuál es el propósito principal de un manual de usuario?",
+        opciones: ["Explicar cómo utilizar las funciones del sistema.", "Describir únicamente el código fuente.", "Reemplazar las pruebas del sistema."],
+        respuesta: 0,
+      },
+      {
+        pregunta: "¿Qué información ayuda a explicar el recorrido de desarrollo de un sistema?",
+        opciones: ["Las etapas realizadas, las decisiones tomadas y las evidencias del proceso.", "Solo el nombre final del programa.", "Una lista de contraseñas de los usuarios."],
+        respuesta: 0,
+      },
+      {
+        pregunta: "¿Para quién se redacta principalmente la documentación técnica?",
+        opciones: ["Para quienes mantienen o desarrollan el sistema.", "Exclusivamente para quienes compran el equipo.", "Para sustituir la interfaz del sistema."],
         respuesta: 0,
       },
     ],
